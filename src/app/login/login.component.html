@@ -1,0 +1,35 @@
+<div class="hero min-h-screen">
+      <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-200">
+        <div class="card-body">
+            <form #loginData="ngForm" (ngSubmit)="loginSubmit(loginData)">
+            <div class="form-control">
+                <label class="label">
+                    <span class="label-text">Email</span>
+                </label>
+                <input #email="ngModel" type="text" required placeholder="email"  name="email" ngModel class="input input-bordered" />
+                <span *ngIf="email.touched && email.invalid">
+                    <p *ngIf="email.errors">First Name is Required</p>
+                </span>
+            </div>
+            <div class="form-control">
+                <label class="label">
+                    <span class="label-text">Password</span>
+                </label>
+                <input #password="ngModel" required type="text" placeholder="password" name="password" ngModel class="input input-bordered" />
+                <span *ngIf="password.touched && password.invalid">
+                    <p *ngIf="password.errors">Password is Required</p>
+                </span>
+                <label class="label">
+                    <a href="/forgot-password" class="label-text-alt link link-hover hover:text-[#6619e6]">Forgot password?</a>
+                </label>
+            </div>
+            <div class="form-control mt-6">
+                <button class="btn btn-primary" type="submit">Login</button>
+            </div>
+            </form>
+            <div class="divider">OR</div>
+            
+            <a href="/register" class="text-center link link-hover hover:link-warning">Create new account</a>
+        </div>
+    </div>
+  </div>
